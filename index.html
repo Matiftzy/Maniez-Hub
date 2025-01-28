@@ -8,13 +8,13 @@
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
         @font-face {
-            font-family: 'Gotham';
-            src: url('https://example.com/gotham-semibold.woff2') format('woff2'); /* Replace with actual font URL */
+            font-family: 'SF Pro Display';
+            src: url('fonts/SF-Pro-Display-Semibold.woff') format('woff'); /* Replace with actual font URL */
         }
 
         body {
             margin: 0;
-            font-family: 'Gotham', sans-serif;
+            font-family: 'SF Pro Display', sans-serif;
             background: linear-gradient(to bottom, #191919, #191919);
             color: #fff;
             text-align: center;
@@ -27,7 +27,7 @@
             padding: 0.5rem 1rem;
             background-color: #222222;
             border-radius: 15px;
-            max-width: 95%;
+            max-width: 50%;
             margin: 1rem auto;
             border: 2px solid #323232;
         }
@@ -49,11 +49,12 @@
             border-radius: 5px;
         }
         main {
-            margin: 5rem 0;
+            margin: 6rem 0;
         }
         .main-title {
             font-family: 'Dela Gothic One', cursive;
             font-size: 3rem;
+            margin-top: 10rem;
             margin-bottom: 1rem;
             text-transform: uppercase;
             letter-spacing: 0.2rem;
@@ -68,13 +69,16 @@
             }
         }
         .main-description {
-            font-family: 'Gotham', sans-serif;
+            font-family: 'SF Pro Display', sans-serif;
             font-size: 1.2rem;
+            margin-top: 2rem;
             margin-bottom: 2rem;
             line-height: 1.5;
         }
         .button-primary {
             font-family: 'Gotham', sans-serif;
+            margin-top: 2rem;
+            margin-right: 1rem;
             background-color: #2c6fa7;
             color: #fff;
             border: none;
@@ -106,50 +110,75 @@
         .button-primary:hover::after {
             opacity: 1;
         }
-        .supported-games {
-            margin-top: 1rem;
-            background-color: #121212;
-            padding: 2rem;
-            border-radius: 10px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+        .stack-area {
+            width: 100%;
+            height: 300vh;
+            position: relative;
+            margin-top: 155px;
+            background: #191919;
             display: flex;
-            align-items: flex-start;
+        }
+        .left {
+            height: 100vh;
+            flex-basis: 50%;
+            position: sticky;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .title {
+            width: 420px;
+            font-size: 84px;
+            font-family: 'Gotham';
+            font-weight: 700;
+            line-height: 88px;
             text-align: left;
         }
-        .game-logo {
-            margin-right: 2rem;
-            width: 150px;
-            flex-shrink: 0;
+        .sub-title {
+            width: 420px;
+            font-family: 'Gotham';
+            font-size: 14px;
+            text-align: left;
         }
-        .game-details {
-            flex: 1;
+        .right {
+            height: 100vh;
+            flex-basis: 50%;
+            position: sticky;
+            top: 0;
         }
-        .game-details h3 {
-            margin: 0;
-            font-size: 1.8rem;
+        .card {
+            width: 400px;
+            height: 200px;
+            border-radius: 25px;
+            margin-bottom: 10px;
+            position: absolute;
+            top: calc(50% - 175px);
+            left: calc(50% - 175px);
+            transition: 0.5s ease-in-out;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
         }
-        .game-details p {
-            margin: 1rem 0;
-            line-height: 1.6;
+        .card img {
+            width: 100%;
+            border-radius: 15px;
+            object-fit: cover;
+            margin-bottom: -210px;
         }
-        .play-button {
-            font-family: 'Gotham', sans-serif;
-            background-color: #00cc66;
-            color: #fff;
-            border: none;
-            padding: 0.75rem 2rem;
-            border-radius: 10px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 10px 20px rgba(0, 204, 102, 0.5);
+        .card .sub, .card {
+            text-align: left;
+            margin-left: 20px;
+            font-size: 20px;
         }
-        .play-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 25px rgba(0, 204, 102, 0.7);
+        .card .content {
+            text-align: left;
+            margin-left: 20px;
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .away {
+            transform-origin: bottom left;
         }
     </style>
 </head>
@@ -176,26 +205,66 @@
         <button class="button-primary">Get Key</button>
         <button class="button-primary">Executors</button>
 
-        <h2 style='font-family: Gotham, sans-serif; font-size: 1.8rem; text-align: center; margin-bottom: 1rem;'>Supported Games</h2>
-<div class="supported-games">
-            <img src="https://tr.rbxcdn.com/180DAY-9afb60c5cd3895305a3d7d7e902a3ea2/256/256/Image/Webp/noFilter" alt="The Strongest Battlegrounds" class="game-logo">
-            <div class="game-details">
-                <h3>The Strongest Battlegrounds</h3>
-                <p>Train & fight others to be the strongest.<br><br>
-                📱💻🎮 You can play on any device. (CONSOLE, PC, MOBILE)<br>
-                ⭐ Please consider liking and favoriting the game for more updates.<br><br>
-                🖥️ Controls<br>
-                G - ultimate mode<br>
-                F - block<br>
-                Q - dash<br>
-                Q (while ragdolled) - ragdoll cancel/evasive<br>
-                Double Tap W - run<br>
-                Left Click - punch<br>
-                B - emote wheel<br><br>
-                🏆 "Best Fighting Experience" Innovation Awards '24</p>
-                <button class="play-button" onclick="window.open('https://www.roblox.com/games/10449761463/The-Strongest-Battlegrounds', '_blank')">Play</button>
+        <div class="stack-area">
+            <div class="left">
+                <div class="title">Supported Games</div>
+                <div class="sub-title">
+                    Discover the full list of Roblox games supported by Maniez Hub. 
+                    This Script Hub is designed to enhance your gaming experience with top-notch performance 
+                    and advanced features across a variety of popular games. Browse the supported games and 
+                    take your gameplay to the next level with ease!
+                    <br />
+                    <button class="button-primary">See more details</button>
+                </div>
+            </div>
+            <div class="right">
+                <div class="card">
+                    <img src="https://tr.rbxcdn.com/180DAY-6d174abed92eca2a5a9d5320b25fd8be/768/432/Image/Webp/noFilter" alt="The Strongest Battlegrounds">
+                    <div class="sub">The Strongest Battlegrounds</div>
+                    <div class="content">Yielding Arts</div>
+                </div>
+                <div class="card">
+                    <img src="https://tr.rbxcdn.com/180DAY-7c0f003999e63b831af53f2ea454191b/768/432/Image/Webp/noFilter" alt="Blox Fruits">
+                    <div class="sub">Blox Fruits</div>
+                    <div class="content">Gamer Robot Inc</div>
+                </div>
             </div>
         </div>
     </main>
+
+    <script>
+        let cards = document.querySelectorAll(".card");
+        let stackArea = document.querySelector(".stack-area");
+
+        function rotateCards() {
+            let angle = 0;
+            cards.forEach((card, index) => {
+                if (card.classList.contains("away")) {
+                    card.style.transform = `translateY(-120vh) rotate(-48deg)`;
+                } else {
+                    card.style.transform = ` rotate(${angle}deg)`;
+                    angle = angle - 10;
+                    card.style.zIndex = cards.length - index;
+                }
+            });
+        }
+
+        rotateCards();
+
+        window.addEventListener("scroll", () => {
+            let distance = window.innerHeight * 0.5;
+            let topVal = stackArea.getBoundingClientRect().top;
+            let index = -1 * (topVal / distance + 1);
+            index = Math.floor(index);
+            for (i = 0; i < cards.length; i++) {
+                if (i <= index) {
+                    cards[i].classList.add("away");
+                } else {
+                    cards[i].classList.remove("away");
+                }
+            }
+            rotateCards();
+        });
+    </script>
 </body>
 </html>
