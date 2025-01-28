@@ -64,6 +64,7 @@
             text-transform: uppercase;
             letter-spacing: 0.2rem;
             animation: float 5s ease-in-out infinite;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.15), 0 0 20px rgba(255, 255, 255, 0.1), 0 0 30px rgba(255, 255, 255, 0.05);
         }
         @keyframes float {
             0%, 100% {
@@ -79,6 +80,7 @@
             margin-top: 2rem;
             margin-bottom: 2rem;
             line-height: 1.5;
+            color: rgba(255, 255, 255, 0.75);
         }
         .button-primary {
             font-family: 'SF Pro Display', sans-serif;
@@ -151,7 +153,7 @@
         }
         .right {
             height: 100vh;
-            flex-basis: 50%;
+            flex-basis: 30%;
             position: sticky;
             top: 0;
         }
@@ -191,7 +193,8 @@
 <body>
     <header>
         <div class="logo">
-            <h2>Maniez Hub</h2>
+            <img src="assets/MANIEZ HUB LOGO.png" alt="Maniez Hub Logo" style="height: 40px; margin-right: 10px; vertical-align: middle;">
+            <h2 style="display: inline;">Maniez Hub</h2>
         </div>
         <nav>
             <a href="#">Home</a>
@@ -202,9 +205,7 @@
     </header>
 
     <main>
-        <div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
-            <img src="assets/MANIEZ HUB LOGO.png" alt="Maniez Hub Logo" style="width: 50px; height: 50px; object-fit: contain;">
-            <div class="main-title">Maniez Hub</div>
+        <div class="main-title">Maniez Hub</div>
         <div class="main-description">
             Maniez Hub is a hub that can be trusted and developed with heart and made with quality for many Roblox games.<br>
             We ensure quality and securitythrough strict certification standards.
