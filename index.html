@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maniez Hub - Trusted Roblox Platform</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+        @font-face {
+            font-family: 'SF Pro Display';
+            src: url('fonts/SF-Pro-Display-Semibold.woff') format('woff'); /* Replace with actual font URL */
+        }
+        @font-face {
+            font-family: 'SF Pro Display Regular';
+            src: url('fonts/SF-Pro-Display-Regular.woff') format('woff'); /* Replace with actual font URL */
+        }
+
+        body {
+            margin: 0;
+            font-family: 'SF Pro Display Regular', sans-serif;
+            background: linear-gradient(to bottom, #191919, #191919);
+            color: #fff;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background-color: #222222;
+            border-radius: 15px;
+            max-width: 50%;
+            margin: 1rem auto;
+            border: 2px solid #323232;
+        }
+        header .logo h2 {
+            font-family: 'Dela Gothic One', cursive;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        header a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            margin: 0 0.5rem;
+            font-size: 0.9rem;
+            font-family: 'SF Pro Display Regular', sans-serif;
+        }
+        header a.join-discord {
+            background-color: #5865f2;
+            padding: 0.4rem 0.8rem;
+            border-radius: 5px;
+        }
+        main {
+            margin: 6rem 0;
+        }
+        .main-title {
+            font-family: 'Dela Gothic One', cursive;
+            font-size: 3rem;
+            margin-top: 10rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+            animation: float 5s ease-in-out infinite;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.15), 0 0 20px rgba(255, 255, 255, 0.1), 0 0 30px rgba(255, 255, 255, 0.05);
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        .main-description {
+            font-family: 'SF Pro Display Regular', sans-serif;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.75);
+        }
+        .button-primary {
+            font-family: 'SF Pro Display', sans-serif;
+            margin-top: 2rem;
+            margin-right: 1rem;
+            background-color: #2c6fa7;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 20px rgba(51, 120, 242, 0.5);
+            position: relative;
+        }
+        .button-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(51, 120, 242, 0.7);
+        }
+        .button-primary::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(180deg, #3178b1, #224b6f);
+            border-radius: 12px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .button-primary:hover::after {
+            opacity: 1;
+        }
+        .stack-area {
+            width: 100%;
+            height: 300vh;
+            position: relative;
+            background: #191919;
+            display: flex;
+            margin-top: 50vh;
+        }
+        .left {
+            height: 100vh;
+            flex-basis: 50%;
+            position: sticky;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .title {
+            width: 420px;
+            font-size: 84px;
+            font-family: 'SF Pro Display';
+            font-weight: 700;
+            line-height: 88px;
+            text-align: left;
+        }
+        .sub-title {
+            width: 420px;
+            font-family: 'SF Pro Display Regular';
+            font-size: 22px;
+            text-align: left;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .right {
+            height: 100vh;
+            flex-basis: 30%;
+            position: sticky;
+            top: 0;
+        }
+        .card {
+            width: 600px;
+            height: 300px;
+            border-radius: 25px;
+            margin-bottom: 10px;
+            position: absolute;
+            top: calc(50% - 175px);
+            left: calc(50% - 175px);
+            transition: 0.5s ease-in-out;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+        }
+        .card img {
+            width: 100%;
+            border-radius: 15px;
+            object-fit: cover;
+            margin-bottom: -35vh;
+        }
+        .card .sub, .card {
+            text-align: left;
+            margin-left: 20px;
+            font-size: 25px;
+            text-shadow: 0 0 5px black, 0 0 5px black;
+        }
+        .card .content {
+            text-align: left;
+            margin-left: 20px;
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.5);
+            text-shadow: 0 0 5px black, 0 0 5px black;
+        }
+        .away {
+            transform-origin: bottom left;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/MANIEZ HUB LOGO.png" alt="Maniez Hub Logo" style="height: 40px; margin-right: 10px; vertical-align: middle;">
+            <h2 style="display: inline;">Maniez Hub</h2>
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Blog</a>
+            <a href="#">Support</a>
+            <a href="#" class="join-discord">Join Discord</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="main-title">Maniez Hub</div>
+        <div class="main-description">
+            Maniez Hub is a hub that can be trusted and developed with heart and made with quality for many Roblox games.<br>
+            We ensure quality and securitythrough strict certification standards.
+        </div>
+        <button class="button-primary" onclick="window.location.href='get-scripts.html'">Get Scripts</button>
+        <button class="button-primary">Get Key</button>
+        <button class="button-primary">Executors</button>
+
+        <div class="animate-on-scroll" style="opacity: 0; transform: translateY(100px); transition: all 0.6s ease; text-align: center; margin-top: 60vh;">
+            <h2 style="font-family: 'SF Pro Display', sans-serif; font-size: 2.5rem; color: #fff; ">Why choose us?</h2>
+            <p style="font-family: 'SF Pro Display Regular', sans-serif; font-size: 1.2rem; color: rgba(255, 255, 255, 0.7);">The unrivaled leader in innovative scripts.</p>
+        </div>
+
+        <div class="stack-area">
+            <div class="left">
+                <div class="title">Supported Games</div>
+                <div class="sub-title">
+                    Unlock the ultimate gaming experience with Maniez Hub. This powerful Script Hub enhances your 
+                    gameplay with peak performance and cutting-edge features across a wide range of popular Roblox games. 
+                    Explore the full list of supported games and make yourself unstoppable.
+                    <br />
+                    <button class="button-primary">See more details</button>
+                </div>
+            </div>
+            <div class="right">
+                <div class="card">
+                    <img src="https://tr.rbxcdn.com/180DAY-6d174abed92eca2a5a9d5320b25fd8be/768/432/Image/Webp/noFilter" alt="The Strongest Battlegrounds">
+                    <div class="sub">The Strongest Battlegrounds</div>
+                    <div class="content">Yielding Arts</div>
+                </div>
+                <div class="card">
+                    <img src="https://tr.rbxcdn.com/180DAY-7c0f003999e63b831af53f2ea454191b/768/432/Image/Webp/noFilter" alt="Blox Fruits">
+                    <div class="sub">Blox Fruits</div>
+                    <div class="content">Gamer Robot Inc</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let cards = document.querySelectorAll(".card");
+        let stackArea = document.querySelector(".stack-area");
+
+        function rotateCards() {
+            let angle = 0;
+            cards.forEach((card, index) => {
+                if (card.classList.contains("away")) {
+                    card.style.transform = `translateY(-120vh) rotate(-48deg)`;
+                } else {
+                    card.style.transform = ` rotate(${angle}deg)`;
+                    angle = angle - 10;
+                    card.style.zIndex = cards.length - index;
+                }
+            });
+        }
+
+        rotateCards();
+
+        window.addEventListener("scroll", () => {
+            let distance = window.innerHeight * 0.5;
+            let topVal = stackArea.getBoundingClientRect().top;
+            let index = -1 * (topVal / distance + 1);
+            index = Math.floor(index);
+            for (i = 0; i < cards.length; i++) {
+                if (i <= index) {
+                    cards[i].classList.add("away");
+                } else {
+                    cards[i].classList.remove("away");
+                }
+            }
+            rotateCards();
+        });
+    </script>
+<script>
+        function handleScrollAnimation() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            elements.forEach((el) => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    el.style.opacity = 1;
+                    el.style.transform = 'translateY(0)';
+                } else {
+                    el.style.opacity = 0;
+                    el.style.transform = 'translateY(50px)';
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScrollAnimation);
+        window.addEventListener('load', handleScrollAnimation);
+    </script>
+<script>
+        function handleScrollAnimation() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            elements.forEach((el) => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    el.style.opacity = 1;
+                    el.style.transform = 'translateY(0)';
+                } else {
+                    el.style.opacity = 0;
+                    el.style.transform = 'translateY(100px)';
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScrollAnimation);
+        window.addEventListener('load', handleScrollAnimation);
+    </script>
+</body>
+</html>
