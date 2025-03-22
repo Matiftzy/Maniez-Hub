@@ -1,6 +1,5 @@
 local jsonData = game:GetService("HttpService"):JSONEncode(data)
 
--- 🔹 Send request to Discord webhook using request()
 if request then
     request({
         Url = webhook,
